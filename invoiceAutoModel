@@ -1,0 +1,21 @@
+businnes logic autoInvoice
+
+loginForm
+{
+SignUp 
+Login
+};
+
+dashBoard
+{
+melihat data pelanggan
+
+
+menambahkan pelanggan 
+
+
+menghapus pelanggan
+
+
+mencetak invoice
+};
