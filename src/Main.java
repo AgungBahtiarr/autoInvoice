@@ -23,7 +23,7 @@ public class Main {
     public static String[] passwordAdmin = new String[] {
             "admin", "1"
     };
-    public static String data = "/home/agungb/autoInvoice/src/data.txt";
+    public static String data = "src/data.txt";
     public static java.util.Scanner scan = new Scanner(System.in);
 
     /*
@@ -61,6 +61,7 @@ public class Main {
         }
         if(status){
             System.out.println("Login Berhasil");
+            viewaddDataPelanggan();
             viewshowDataPelanggan();
         }else{
             System.out.println("Login gagal");
@@ -231,7 +232,12 @@ public class Main {
     public static void viewcetakInvoice() {
         showDataPelanggan();
         var number = input("Masukkan ID pelanggan yang akan di cetak");
-        cetakInvoice(number);
+        if(Integer.valueOf(number)>dataPelanggan.length){
+            System.out.println("No ID Tidak Terdaftar");
+            viewcetakInvoice();
+        }else{
+            cetakInvoice(number);
+        }
 
         var tanya = input("Sudah Melakukan pembayaran? (y/n)");
         if (tanya.equals("y")) {
@@ -255,7 +261,7 @@ public class Main {
 
     public static void viewshowDataPelanggan() {
         System.out.println("\nDAFTAR PELANGGAN\n");
-        viewaddDataPelanggan();
+        // viewaddDataPelanggan();
         showDataPelanggan();
 
         boolean isTrue = true;
@@ -299,11 +305,16 @@ public class Main {
     public static void viewremoveDatapelanggan() {
         System.out.println("MENGHAPUS DATA PELANGGAN");
         showDataPelanggan();
-        var number = input("Masukkan ID pelanggan yang akan di hapus");
-        boolean success = removeTodoList(Integer.valueOf(number));
-        if (!success) {
-            System.out.println("gagal menghapus");
+        var number = input("Masukkan ID pelanggan yang akan di hapus,(x untuk batal)");
+        if(number.equals("x")){
+            viewshowDataPelanggan();
+        }else{
+            boolean success = removeTodoList(Integer.valueOf(number));
+            if (!success) {
+                System.out.println("gagal menghapus");
+            }
         }
+        
 
     }
 }
