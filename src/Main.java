@@ -17,12 +17,6 @@ public class Main {
     public static String[] dataPelanggan = new String[20];
     public static String[] dataPaket = new String[20];
     public static String[] dataHarga = new String[20];
-    public static String[] usernameAdmin = new String[] {
-            "admin", "agung"
-    };
-    public static String[] passwordAdmin = new String[] {
-            "admin", "1"
-    };
     public static String data = "src/data.txt";
     public static java.util.Scanner scan = new Scanner(System.in);
 
