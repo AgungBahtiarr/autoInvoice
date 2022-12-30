@@ -187,7 +187,7 @@ public class Main {
         }
     }
 
-    public static boolean removeTodoList(Integer number) {
+    public static boolean removeDataPelanggan(Integer number) {
 
         if ((number - 1) >= dataPelanggan.length) {
             return false;
@@ -303,7 +303,7 @@ public class Main {
         if(number.equals("x")){
             viewshowDataPelanggan();
         }else{
-            boolean success = removeTodoList(Integer.valueOf(number));
+            boolean success = removeDataPelanggan(Integer.valueOf(number));
             if (!success) {
                 System.out.println("gagal menghapus");
             }
