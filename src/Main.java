@@ -24,7 +24,6 @@ public class Main {
      * Membuat Method untuk Menyimpan Inputan
      */
     public static String input(String info) {
-
         System.out.print(info + " : ");
         String data = scan.nextLine();
         return data;
@@ -244,8 +243,7 @@ public class Main {
     public static void cetakKwitansi(String number) {
         System.out.println("\n");
         System.out.println("============= STRUK KWITANSI ===============");
-        System.out
-                .println("Terimakasih Sudah Melakukan Pembayaran Sebesar " + dataHarga[(Integer.valueOf(number) - 1)]);
+        System.out.println("Terimakasih Sudah Melakukan Pembayaran Sebesar " + dataHarga[(Integer.valueOf(number) - 1)]);
         System.out.println("Atas Nama : " + dataPelanggan[(Integer.valueOf(number) - 1)]);
         System.out.print("Dengan Nomer ID : " + (Integer.valueOf(number)));
         System.out.println("\nUntuk Pembayaran Bulanan Paket Wifi : " + dataPaket[(Integer.valueOf(number) - 1)]);
@@ -277,6 +275,7 @@ public class Main {
                 viewcetakInvoice();
             } else if (tanya.equals("x")) {
                 isTrue = false;
+                System.out.println("Terimakasih ^_^");
             } else {
                 System.out.println("\nPerintah tidak di ketahui");
             }
