@@ -188,7 +188,7 @@ public class Main {
 
     public static boolean removeDataPelanggan(Integer number) {
 
-        if ((number - 1) >= dataPelanggan.length) {
+        if ((number - 1) >= dataPelanggan.length || (number-1) <=0 ) {
             return false;
         } else if (dataPelanggan[number - 1] == null) {
             return false;
