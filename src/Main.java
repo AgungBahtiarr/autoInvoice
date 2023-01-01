@@ -188,7 +188,7 @@ public class Main {
 
     public static boolean removeDataPelanggan(Integer number) {
 
-        if ((number - 1) >= dataPelanggan.length || (number-1) <=0 ) {
+        if ((number - 1) >= dataPelanggan.length || (number-1) <0 ) {
             return false;
         } else if (dataPelanggan[number - 1] == null) {
             return false;
@@ -196,6 +196,7 @@ public class Main {
             dataPelanggan[number - 1] = null;
             dataPaket[number - 1] = null;
             dataHarga[number - 1] = null;
+            System.out.println("\n===Berhasil Menghapus===\n");
             return true;
         }
     }
