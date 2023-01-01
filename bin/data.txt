@@ -1,4 +1,3 @@
-user;password
-agung;1
-rifki;2
-rijal;3
+admin;admin
+irfan;tanggallahirku
+sandi;1
