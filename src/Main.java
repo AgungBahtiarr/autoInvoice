@@ -14,6 +14,7 @@ public class Main {
 
     public static String paket;
     public static String harga;
+    public static boolean isGagal;
     public static String[] dataPelanggan = new String[20];
     public static String[] dataPaket = new String[20];
     public static String[] dataHarga = new String[20];
@@ -129,6 +130,7 @@ public class Main {
 
     public static void inputAddDataPelanggan() {
         var isFull = true;
+        isGagal = false;
 
         var pelanggan = input("Masukkan nama Pelanggan");
         System.out.println("Silahkan pilih paket");
@@ -148,6 +150,7 @@ public class Main {
             harga = "300000";
         }else{
             System.out.println("Input Tidak di ketahui");
+            isGagal = true;
         }
         // var harga = input("Masukkan Tarif bulanan");
 
@@ -177,7 +180,7 @@ public class Main {
         }
         // tambahkan ke posisi yang datanya null
         for (var i = 0; i < dataPelanggan.length; i++) {
-            if (dataPelanggan[i] == null) {
+            if (dataPelanggan[i] == null && !isGagal) {
                 dataPelanggan[i] = pelanggan;
                 dataPaket[i] = paket;
                 dataHarga[i] = "Rp." + harga;
